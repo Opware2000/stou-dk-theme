@@ -1,3 +1,6 @@
+# FORK
+forked from [stou/stou-dk-theme](https://github.com/stou/stou-dk-theme)
+
 # Mobile First Blog Theme for Hugo 
 
 It was created for my personal blog at [stou.dk](http://stou.dk)
