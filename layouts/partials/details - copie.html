@@ -1,0 +1,68 @@
+<!-- Integrate listing of related topics and tags
+<div>
+  <ul id="categories">
+      {{ range .Params.topics }}
+      <li><a href="/topics/{{ . | urlize }}">{{ . }}</a> </li>
+      {{ end }}
+  </ul>
+  <ul id="tags">
+      {{ range .Params.tags }}
+      <li> <a href="/tags/{{ . | urlize }}">{{ . }}</a> </li>
+      {{ end }}
+  </ul>
+</div>
+-->
+
+<div class="panel clearfix">
+
+<div>
+{{if .Prev}}
+  {{if .Next}}
+  <article class="post medium-6 small-12 columns">
+  {{else}}
+  <article class="post small-12 columns">
+  {{end}}
+
+    {{if .Prev.Params.cover}}
+      <a href='{{ .Prev.Permalink }}'><img src="{{ .Prev.Params.cover }}" /></a>
+    {{end}}
+
+    <h3>
+      <a href='{{ .Prev.Permalink }}'>{{.Prev.Title}}</a>
+    </h3>
+
+    {{ with .Prev.Description }}<h6 class="subheader">{{ . }}</h6>{{ end }}
+
+    <p class="post-meta"><i class="fa fa-calendar"></i>&nbsp;{{ .Prev.Date.Format "02/01/2006" }} - <i class="fa fa-clock-o"></i>&nbsp;{{ .Prev.ReadingTime}} min</p>
+    {{if not .Prev.Params.cover}}
+    {{ with .Prev.Summary }}<p>{{ . }}</p>{{ end }}
+    {{end}}
+  </article>
+{{end}}
+
+{{if .Next}}
+
+  {{if .Prev}}
+  <article class="post medium-6 small-12 columns">
+  {{else}}
+  <article class="post small-12 columns">
+  {{end}}
+    {{if .Next.Params.cover}}
+      <a href='{{ .Next.Permalink }}'><img src="{{ .Next.Params.cover }}" /></a>
+    {{end}}
+
+    <h3>
+    <a href='{{ .Next.Permalink }}'>{{.Next.Title}}</a>
+    </h3>
+
+    {{ with .Next.Description }}<h6 class="subheader">{{ . }}</h6>{{ end }}
+    <p class="post-meta"><i class="fa fa-calendar"></i>&nbsp;{{ .Next.Date.Format "02/01/2006" }} - <i class="fa fa-clock-o"></i>&nbsp;{{ .Next.ReadingTime}} min</p>
+    {{if not .Next.Params.cover}}
+    {{ with .Next.Summary }}<p>{{ . }}</p>{{ end }}
+    {{end}}
+  </article>
+{{end}}
+
+</div>
+</div>
+

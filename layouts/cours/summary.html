@@ -1,0 +1,37 @@
+{{“<!-- cours : summary -->" | safeHtml }}
+<article class="post clearfix">
+	{{if .Params.cover }}
+	<div class="medium-5 small-12 columns">
+		<a class="list-cover-image" href='{{ .Permalink }}'><img src="{{ .Params.cover }}" /></a>
+	</div>
+	{{else}}
+	<hr />
+	{{ end }}
+	<header>
+		<h2>
+		<a href='{{ .Permalink }}'> {{ .Title }}</a>
+		</h2>
+		{{ with .Description }}<h6 class="subheader">{{ . }}</h6>{{ end }}
+		<div class="post-meta">{{ .Date.Format "02/01/2006" }} - 
+		<!-- {{ .FuzzyWordCount }} Words -->
+		<i class="fa fa-clock-o"></i>&nbsp;{{ .ReadingTime}} min.
+		 {{ with .Params.authorname }} <i class="fa fa-user"></i>&nbsp;{{ . }}{{ end }}
+		</div>
+			{{ $baseurl := .Site.BaseUrl }}
+	{{ range .Params.tags }}
+		<span class="secondary radius label"> <a href="{{ $baseurl }}/tags/{{ . | urlize }}">#{{ lower . }}</a> </span>
+	{{ end }}
+
+	</header>
+
+	<div class="show-for-medium-up">
+		{{ if isset .Params "excerpt" }}
+		<p>{{ .Params.excerpt }}</p>
+		{{ else }}
+		<p>{{ .Summary }}</p>
+		{{ end }}
+	</div>
+	<footer>
+		<a href='{{ .Permalink }}'><nobr>Read more →</nobr></a>
+	</footer>
+</article>

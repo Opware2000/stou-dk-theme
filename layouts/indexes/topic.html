@@ -4,11 +4,11 @@
   <div>
    <h1 class="title">{{ .Title }}</h1>
     {{ range .Data.Pages }}
-        {{ .Render "summary"}}
+        {{ .Render "li"}}
     {{ end }}
   </div>
 </section>
 
 {{ partial "taxonomies.html" . }}
 
-{{ partial "footer.html" }}
+{{ partial "footer.html" . }}

@@ -1,0 +1,25 @@
+{{ partial "head.html" . }}
+
+<section>
+<div>
+<h1 class="title">{{ .Title }}</h1>
+  <ul>
+    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+      <li><a href="/{{ $taxonomyname | urlize }}">{{ $taxonomyname }}</a>
+        <ul>
+          {{ range $key, $value := $taxonomy }}
+          <li> {{ $key }} </li>
+                <ul>
+                {{ range $value.Pages }}
+                    <li hugo-nav="{{ .RelPermalink}}"><a href="{{ .Permalink}}"> {{ .LinkTitle }} </a> </li>
+                {{ end }}
+                </ul>
+          {{ end }}
+        </ul>
+      </li>
+    {{ end }}
+  </ul>
+  </div>
+</section>
+
+{{ partial "footer.html" .}}

@@ -2,14 +2,12 @@
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 {{if .Description }}
 <meta name="description" content="{{ .Description }}">
 {{else}}
 <meta name="description" content="{{ .Site.Params.description }}">
 {{end}}
 <meta name="keywords" content="{{ range .Keywords }}{{ . }}, {{ end }}">
-
  <!-- open graph -->
 <meta property="og:type" content="article"/>
 {{if .Description }}
@@ -19,8 +17,8 @@
 {{end}}
 <meta property="og:title" content="{{ .Title }} : {{ .Site.Title }}"/>
 <meta property="og:site_name" content="{{.Site.Title}}"/>
-{{if .Params.cover_image_url}}
-<meta property="og:image" content="{{ .Site.BaseUrl }}{{ .Params.cover_image_url }}" />
+{{if .Params.cover}}
+<meta property="og:image" content="{{ .Site.BaseUrl }}{{ .Params.cover }}" />
 <meta property="og:image:type" content="image/jpeg" />
 {{end}}
 <meta property="og:url" content="{{ .Permalink }}" />
@@ -28,7 +26,6 @@
 <meta property="article:modified_time" content="{{ .Date.Format "2006-01-02" }}"/>
 {{ range .Keywords }}<meta property="article:tag" content="{{ . }}" />
 {{ end }}
-
 <!--Twitter Cards-->
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="{{ .Site.Params.twitter_id }}" />
@@ -38,10 +35,9 @@
 {{else}}
 <meta name="twitter:description" content="{{ .Site.Params.description }}">
 {{end}}
-
 <meta name="twitter:creator" content="{{ .Site.Params.twitter_id }}" />
-{{if .Params.cover_image_url}}
-<meta name="twitter:image:src" content="{{ .Site.BaseUrl }}{{ .Params.cover_image_url }}">
+{{if .Params.cover}}
+<meta name="twitter:image:src" content="{{ .Site.BaseUrl }}{{ .Params.cover }}">
 {{end}}
 <meta name="twitter:domain" content="{{ .Site.Params.twitter_domain }}">
 

@@ -1,13 +1,18 @@
 {{ partial "head.html" . }}
 <section>
-	<h1 class="title">Latest Posts</h1>
-	{{ range $element := first 6 .Data.Pages }}
+	<h1 class="title">Derniers articles du site</h1>
+	{{ range $element := first 6 .Data.Pages.ByDate.Reverse }}
 	{{ $element.Render "summary"}}
 	{{ end }}
-
 </section>
-
 {{ partial "taxonomies.html" . }}
 
+  <div class="row">
+    <div class="large-8 medium-12 columns">
+<p class="copyright"><small>mise à jour le {{ .Now.Format "2 Jan 2006 à 15:04" }}</small></p>
+    </div>
+  </div>
 {{ partial "footer.html" . }}
+
+
 

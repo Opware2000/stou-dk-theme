@@ -1,16 +1,15 @@
-
+p {
+ text-rendering : optimizeLegibility;
+}
 pre {
 	background-color: $code-background-color;
 	margin-bottom: $paragraph-margin-bottom;
 	padding-left: rem-calc(20);
 	padding-top: rem-calc(5);
 	padding-bottom: rem-calc(5);
-
 	line-height: normal;
-
 	// add border radius
 	@include radius($global-radius);
-
 	code {
 		padding-left: 0;
 		border: none;
@@ -27,7 +26,7 @@ article.post {
 	}
 
 	footer {
-    	text-align: right;
+    	text-align: center;
     	line-height: 3em;
     }
 
@@ -65,6 +64,9 @@ section {
 	}
 }
 
+.post-meta{
+	font-size:0.7em;
+}
 
 @media #{$medium-up} {
 	.post-list-date {
@@ -109,3 +111,84 @@ nav.top-bar {
 	}
 }
 
+
+article {
+	h1, h2, h3, h4, h5, h6 {
+		font-family: $font-family-sans-serif;
+		color: black;
+		font-weight: bold;
+	}
+	p, ul, li, ol, span, div {
+		font-family: $font-family-sans-serif;
+	}
+	p {
+		text-align: justify;
+	}
+}
+#author {
+		font-family: $font-family-sans-serif;
+		p {
+				font-family: $font-family-sans-serif;
+				font-size:0.8em;
+		}
+}
+article.cours {
+	h1 {
+		color:red;
+	}
+	h2 {
+		color: green;
+	}
+	h3 {
+		color:blue;
+	}
+	blockquote {
+		p {
+			color: red;
+		}
+	}
+}
+.article_precedent, .article_suivant { text-align:center;}
+article.post .post-meta {text-align:center;}
+.img_suite {
+	height:150px;
+} 
+article .illustration{
+	float: right;
+	margin-left:5px;
+	margin-bottom: 5px;
+}
+
+.btn-default {
+border-color: #dbdbdb;
+border-color: #ccc;
+}
+
+.btn {
+display: inline-block;
+padding: 6px 12px;
+margin-bottom: 0;
+line-height: 1.428571429;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+cursor: pointer;
+background-image: none;
+border: 1px solid #DDD;
+border-radius: 4px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+}
+footer.panel {
+margin-bottom:0;
+margin-top:1.25rem;
+padding:0.75rem;
+p.copyright {
+	margin-bottom : 0;
+}
+}
+.imagecache{margin-left:auto;margin-right:auto; max-width:470px;}
+.field-item{width:100%;}
