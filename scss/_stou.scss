@@ -16,6 +16,21 @@ pre {
 	}
 }
 
+.draft {
+	//border: 3px solid $stou-orange;
+	margin-left: -1rem;
+	margin-right: -1rem;
+	padding: 1rem;
+
+	background-color: $silver;
+	// color: lighten(blue, 20%);
+	header {
+		//&:before {
+		//	content: " (unpublished)";
+		//}
+	}
+}
+
 article.post {
 	margin-top: 1em;
 	
@@ -29,7 +44,6 @@ article.post {
     	text-align: center;
     	line-height: 3em;
     }
-
 }
 
 
@@ -43,6 +57,19 @@ section {
 	.post-meta {
 		font-style: italic;
 		text-align: center;
+	}
+
+
+	.social-share-ui {
+
+		.twitter-share-button[style] { 
+			vertical-align: text-bottom !important;
+
+		}
+
+		.fb_like, .fb_iframe_widget {
+			vertical-align: text-bottom !important;
+    }
 	}
 }
 

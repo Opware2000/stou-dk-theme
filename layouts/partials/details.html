@@ -39,7 +39,9 @@
 
     {{ with .Prev.Description }}<h6 class="subheader">{{ . }}</h6>{{ end }}
 
-    <p class="post-meta article_precedent"><i class="fa fa-calendar"></i>&nbsp;{{ .Prev.Date.Format "02/01/2006" }} - <i class="fa fa-clock-o"></i>&nbsp;{{ .Prev.ReadingTime}} min</p>
+
+    <p class="post-meta article_precedent"><i class="fa fa-calendar"></i>&nbsp;{{ .Prev.Date.Format "02/01/2006" }} - <i class="fa fa-clock-o"></i>&nbsp;{{ .Prev.ReadingTime}} min  {{ if .Prev.Draft }}<span class="warning radius label">unpublished</span>{{ end }}</p>
+
   </article>
 {{end}}
 
@@ -59,7 +61,9 @@
     </h5>
 
     {{ with .Next.Description }}<h6 class="subheader">{{ . }}</h6>{{ end }}
-    <p class="post-meta article_suivant"><i class="fa fa-calendar"></i>&nbsp;{{ .Next.Date.Format "02/01/2006" }} - <i class="fa fa-clock-o"></i>&nbsp;{{ .Next.ReadingTime}} min</p>
+
+    <p class="post-meta article_suivant"><i class="fa fa-calendar"></i>&nbsp;{{ .Next.Date.Format "02/01/2006" }} - <i class="fa fa-clock-o"></i>&nbsp;{{ .Next.ReadingTime}} min {{ if .Next.Draft }}<span class="warning radius label">unpublished</span>{{ end }}</p>
+
   </article>
 {{end}}
 

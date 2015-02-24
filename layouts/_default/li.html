@@ -1,7 +1,7 @@
-<!-- default : li -->
-<div class="row">
+<div class="row post{{ if .Draft }} draft{{ end }}">
 	<div class="medium-4 small-12 columns">
-		<div class="post-list-date meta"><p><i class="fa fa-calendar"></i>&nbsp;{{ .Date.Format "02/01/2006" }}</p>
+		<div class="post-list-date meta"><p>{{ if .Draft }}<span class="warning radius label">unpublished</span> {{ end }}<i class="fa fa-calendar"></i>&nbsp;{{ .Date.Format "02/01/2006" }}</p>
+
 		<!-- <p>{{ .ReadingTime}} Minute read</p> -->
 		</div>
 	</div>
