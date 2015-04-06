@@ -1,7 +1,7 @@
 <article class="post clearfix{{ if .Draft }} draft{{ end }}">
 	{{if .Params.cover_image_url}}
 	<div class="medium-5 small-12 columns">
-		<a class="list-cover-image" href='{{ .Permalink }}'><img src="{{ .Params.cover_image_url }}" /></a>
+		<a class="list-cover-image" href='{{ .Permalink }}'><img src="{{ .Params.cover_image_url }}" width="100%" height="auto" alt="illustration {{ .Title }}"/></a>
 	</div>
 	{{else}}
 	<hr />

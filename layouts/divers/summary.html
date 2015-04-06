@@ -2,7 +2,7 @@
 <article class="post clearfix">
 	{{if .Params.cover }}
 	<div class="medium-5 small-12 columns">
-		<a class="list-cover-image" href='{{ .Permalink }}'><img src="{{ .Params.cover }}" /></a>
+		<a class="list-cover-image" href='{{ .Permalink }}'><img src="{{ .Params.cover }}" width="100%" height="auto"  alt="illustration {{ .Title }}" /></a>
 	</div>
 	{{else}}
 	<hr />
