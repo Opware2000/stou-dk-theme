@@ -1,6 +1,6 @@
 <!-- image -->
 {{ with .Get "link"}}<a href="{{.}}">{{ end }}
 <img src="{{ .Get "src" }}" {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt"}}{{.}}{{else}}{{ .Get "caption" }}{{ end }}"{{ end }} class="illustration" 
-{{ if or (.Get "width") (.Get "size") }}width="{{ with .Get "size"}}{{.}}{{else}}{{ .Get "width" }}{{ end }}"{{ else }} widht="100%" {{ end}} height="auto" alt="illustration {{ .Title }}" />
+{{ if or (.Get "width") (.Get "size") }}width="{{ with .Get "size"}}{{.}}{{else}}{{ .Get "width" }}{{ end }}"{{ else }} widht="200px" {{ end}} height="auto" alt="illustration" />
 {{ if .Get "link"}}</a>{{ end }}
 <!-- image -->
