@@ -1,14 +1,14 @@
 <div class="panel clearfix">
 	<h4><a href="{{ .Site.BaseUrl }}/blog" title="All posts">Plus d'articles : </a></h4>
 	<div class="medium-6 columns">	
-		<h5>Catégories</h5>
+		<h5><a href="/topics/" title="Liste des tags" target="_self">Catégories</a></h5>
 		{{ range .Site.Taxonomies.topics.ByCount }}
 		<span class="secondary radius label"><a href="/topics/{{ .Name | urlize }}">{{ .Name }}</a> ({{ .Count }})</span>
 		{{ end }}
 	</div>
 
 	<div class="medium-6 columns">	
-		<h5>Tags</h5>
+		<h5><a href="/tags/" title="Liste des tags" target="_self">Tags</a></h5>
 		{{ range first 20 .Site.Taxonomies.tags.ByCount }}
 		<span class="secondary radius label"><a href="/tags/{{ .Name | urlize }}">{{ .Name }}</a> ({{ .Count }})</span>
 		{{ end }}
