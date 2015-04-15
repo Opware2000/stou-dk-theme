@@ -1,10 +1,4 @@
 <div class="row post{{ if .Draft }} draft{{ end }}">
-	<div class="medium-4 small-12 columns">
-		<div class="post-list-date meta"><p>{{ if .Draft }}<span class="warning radius label">unpublished</span> {{ end }}<i class="fa fa-calendar"></i>&nbsp;{{ .Date.Format "02/01/2006" }}</p>
-
-		<!-- <p>{{ .ReadingTime}} Minute read</p> -->
-		</div>
-	</div>
 	<div class="medium-8 small-12 columns">
 	<h3><a class="post-list-title" href="{{ .Permalink }}">{{ .Title }}</a>
 	<!-- <small>{{ with .Params.authorname }}by {{ . }}{{ end }}</small> --></h3>
@@ -14,12 +8,11 @@
 		<span class="secondary radius label"> <a href="{{ $baseurl }}/tags/{{ . | urlize }}">#{{ lower . }}</a> </span>
 	{{ end }}
 	<br />
-	<small>catégorie : 
-	{{ range .Params.topic }}
-		<span class=""> <a href="{{ $baseurl }}/topic/{{ . | urlize }}">{{ lower . }}</a> </span>
-	{{ end }}
-	</small>
-	{{ with .Description }}<p><i class="fa fa-file-text-o"></i>&nbsp;{{ . }}</p>{{ end }}
+	</div>
+	<div class="medium-4 small-12 columns">
+		<div class="post-list-date meta"><p>{{ if .Draft }}<span class="warning radius label">unpublished</span> {{ end }}<i class="fa fa-calendar"></i>&nbsp;{{ .Date.Format "02/01/2006" }}</p>
 
+		<!-- <p>{{ .ReadingTime}} Minute read</p> -->
+		</div>
 	</div>
 </div>

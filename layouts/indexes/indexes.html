@@ -5,8 +5,11 @@
    <h1 class="title">{{ .Title }}</h1>
    <ul>
    {{ $data := .Data }}
+
     {{ range $key,$value := .Data.Index.ByCount }}
+    
     <li><a href="/{{ $data.Plural }}/{{ $value.Name | urlize }}"> {{ $value.Name }} </a> {{ $value.Count }} </li>
+  
     {{ end }}
    </ul>
   </div>

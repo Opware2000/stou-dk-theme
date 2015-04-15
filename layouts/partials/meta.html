@@ -18,7 +18,11 @@
 <meta property="og:title" content="{{ .Title }} : {{ .Site.Title }}"/>
 <meta property="og:site_name" content="{{.Site.Title}}"/>
 {{if .Params.cover}}
-<meta property="og:image" content="{{ .Site.BaseUrl }}{{ .Params.cover }}" />
+<meta property="og:image" content="{{ .Params.cover }}" />
+<meta property="og:image:type" content="image/jpeg" />
+{{end}}
+{{if .Params.cover_image_url}}
+<meta property="og:image" content="{{ .Params.cover_image_url }}" />
 <meta property="og:image:type" content="image/jpeg" />
 {{end}}
 <meta property="og:url" content="{{ .Permalink }}" />
@@ -37,7 +41,10 @@
 {{end}}
 <meta name="twitter:creator" content="{{ .Site.Params.twitter_id }}" />
 {{if .Params.cover}}
-<meta name="twitter:image:src" content="{{ .Site.BaseUrl }}{{ .Params.cover }}">
+<meta name="twitter:image:src" content="{{ .Params.cover }}">
+{{end}}
+{{if .Params.cover_image_url}}
+<meta name="twitter:image:src" content="{{ .Params.cover_image_url }}">
 {{end}}
 <meta name="twitter:domain" content="{{ .Site.Params.twitter_domain }}">
 

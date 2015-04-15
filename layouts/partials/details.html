@@ -32,7 +32,9 @@
     {{if .Prev.Params.cover}}
       <a href='{{ .Prev.Permalink }}'><img src="{{ .Prev.Params.cover }}" class="img_suite"/></a>
     {{end}}
-
+    {{if .Prev.Params.cover_image_url}}
+      <a href='{{ .Prev.Permalink }}'><img src="{{ .Prev.Params.cover_image_url }}" class="img_suite"/></a>
+    {{end}}
     <h5>
       <a href='{{ .Prev.Permalink }}'>{{.Prev.Title}}<br /><i class="fa fa-arrow-circle-o-left"></i></a>
     </h5>
@@ -54,6 +56,9 @@
   {{end}}
       {{if .Next.Params.cover}}
       <a href='{{ .Next.Permalink }}'><img src="{{ .Next.Params.cover }}" class="img_suite"/></a>
+    {{end}}
+      {{if .Next.Params.cover_image_url}}
+      <a href='{{ .Next.Permalink }}'><img src="{{ .Next.Params.cover_image_url }}" class="img_suite"/></a>
     {{end}}
 
     <h5>

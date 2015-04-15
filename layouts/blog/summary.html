@@ -1,4 +1,3 @@
-{{"<!-- blog : summary-->" | safeHtml }}
 <article class="post clearfix{{ if .Draft }} draft{{ end }}">
 	{{if .Params.cover_image_url }}
 	<div class="medium-4 small-12 columns">
@@ -28,8 +27,8 @@
 	</header>
 
 	<div class="show-for-medium-up">
-		{{ if isset .Params "excerpt" }}
-		<p>{{ .Params.excerpt }}</p>
+		{{ if isset .Params "description" }}
+		<p>{{ .Params.description }}</p>
 		{{ else }}
 		<p>{{ .Summary }}</p>
 		{{ end }}
