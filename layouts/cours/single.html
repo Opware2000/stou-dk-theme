@@ -13,8 +13,28 @@
 		{{ .Content }}
 	</article>
 </section>
+<div class="clearfix"></div>
+<div class="panel clearfix">
+	<h4>A propos de l'auteur :</h4>
+<p>
+	Professeur de S.V.T à la citée scolaire de Toucy. </p>
+<p>	Passionné d'informatique, cofondateur de l'Association Francophone des Utilisateurs de Joomla! (AFUJ).</p>
+</div>
+<div class="panel clearfix">
+<h4>Articles similaires </h4>
+<ul>
+{{ $page_link := .Permalink }}
+{{ $oggetti := .Params.tags }}
+{{ range .Site.Recent }}
+   {{ $page := . }}
+   {{ $has_common_tags := intersect $oggetti .Params.tags | len | lt 0 }}
+   {{ if and $has_common_tags (ne $page_link $page.Permalink) }}
+       <li><a href="{{ $page.Permalink }}">{{ $page.Title }}</a></li>
+   {{ end }}
+{{ end }}
+</ul>
+</div>
 
-{{ partial "details.html" . }}
 {{ partial "disqus.html" . }}
 
 <div class="clearfix"></div>
