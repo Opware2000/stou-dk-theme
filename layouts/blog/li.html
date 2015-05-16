@@ -1,7 +1,10 @@
 <!-- li blog -->
 <div class="row">
 	<div class="medium-4 small-12 columns">
-		<div class="post-list-date meta"><p><i class="fa fa-calendar"></i>&nbsp;{{ .Date.Format "02/01/2006" }}</p>
+		<div class="post-list-date meta"><p><i class="fa fa-calendar"></i>&nbsp;{{ .Date.Format "02/01/2006" }}
+		{{if .Params.cover_image_url }}<br />
+		<a class="list-cover-image" href='{{ .Permalink }}'><img src="{{ .Params.cover_image_url }}" width="100px" height="auto"  alt="illustration {{ .Title }}"/></a>
+		{{ end}}</p>	
 		<!-- <p>{{ .ReadingTime}} Minute read</p> -->
 		</div>
 	</div>
