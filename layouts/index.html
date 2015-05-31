@@ -1,7 +1,7 @@
 {{ partial "head.html" . }}
 <section>
 	<h1 class="title">Derniers articles du site</h1>
-	{{ range $element := first 6 .Data.Pages.ByDate.Reverse }}
+	{{ range $element := first 10 .Data.Pages.ByDate.Reverse }}
 	{{ $element.Render "summary"}}
 	{{ end }}
 </section>
