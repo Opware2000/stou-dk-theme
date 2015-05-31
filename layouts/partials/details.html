@@ -25,9 +25,9 @@
 <div>
 {{if .Prev}}
   {{if .Next}}
-  <article class="post medium-5 small-10 columns article_precedent">
+  <article class="post medium-6 small-12 columns article_precedent">
   {{else}}
-  <article class="post small-10 columns article_precedent">
+  <article class="post small-12 columns article_precedent">
   {{end}}
     {{if .Prev.Params.cover}}
       <a href='{{ .Prev.Permalink }}'><img src="{{ .Prev.Params.cover }}" class="img_suite"/></a>
@@ -50,9 +50,9 @@
 {{if .Next}}
 
   {{if .Prev}}
-  <article class="post medium-5 small-10 columns article_suivant">
+  <article class="post medium-6 small-12 columns article_suivant">
   {{else}}
-  <article class="post small-10 columns article_suivant">
+  <article class="post small-12 columns article_suivant">
   {{end}}
       {{if .Next.Params.cover}}
       <a href='{{ .Next.Permalink }}'><img src="{{ .Next.Params.cover }}" class="img_suite"/></a>
@@ -71,9 +71,7 @@
 
   </article>
 {{end}}
-	<article class="post small-2 columns">
-		<a href="http://www.joomladay.fr/" target="_blank" title="je vais au Joomladay France 2015"><img alt="Joomladay France 2015 NICE 9 et 10 mai 2015" src="http://www.joomladay.fr/images/jd2015/bannieres/Banniere-125x125px-Jy-Vais.jpg" height="125" width="125" /></a>
-	</article>
+	
 </div>
 </div>
 
