@@ -2,7 +2,7 @@
 	<h4><a href="{{ .Site.BaseUrl }}/blog" title="All posts">Plus d'articles : </a></h4>
 	<div class="medium-6 columns">	
 		<h5><a href="/topics/" title="Liste des tags" target="_self">Catégories</a></h5>
-		{{ range .Site.Taxonomies.topics.ByCount }}
+		{{ range .Site.Taxonomies.topics.Alphabetical }}
 		<span class="secondary radius label"><a href="/topics/{{ .Name | urlize }}">{{ .Name }}</a> ({{ .Count }})</span>
 		{{ end }}
 	</div>
