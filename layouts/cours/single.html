@@ -1,6 +1,5 @@
 {{ partial "head.html" .}}
-{{"<!-- cours : single -->" | safeHtml }}
-{{ $baseurl := .Site.BaseUrl }}
+{{ $baseurl := .Site.BaseURL }}
 <section>
 	<h1 class="title">{{ .Title }}</h1>
 	<div class="post-meta"><i class="fa fa-calendar"></i>&nbsp;{{ .Date.Format "02/01/2006" }} - <i class="fa fa-clock-o"></i>&nbsp;{{ .ReadingTime}} min.
@@ -13,6 +12,13 @@
 		{{ .Content }}
 	</article>
 </section>
+<div class="panel clearfix">
+{{ $mymonths := index $.Site.Data.mois }}
+<time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+   Article publié le {{ .Date.Day }} {{ index $mymonths (printf "%d" .Date.Month) }} {{ .Date.Year }} (dernière modification le {{ .Lastmod.Day }} {{ index $mymonths (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Year }})
+ </time>
+</div>
+
 <div class="clearfix"></div>
 <div class="panel clearfix">
 	<h4>A propos de l'auteur :</h4>
@@ -25,7 +31,7 @@
 <ul>
 {{ $page_link := .Permalink }}
 {{ $oggetti := .Params.tags }}
-{{ range .Site.Recent }}
+{{ range .Site.Pages }}
    {{ $page := . }}
    {{ $has_common_tags := intersect $oggetti .Params.tags | len | lt 0 }}
    {{ if and $has_common_tags (ne $page_link $page.Permalink) }}

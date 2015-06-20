@@ -1,6 +1,6 @@
 {{ partial "head.html" .}}
-{{"<!-- cours : single -->" | safeHtml }}
-{{ $baseurl := .Site.BaseUrl }}
+{{"<!-- cours : single -->" | safeHTML }}
+{{ $baseurl := .Site.BaseURL }}
 <section>
 	<h1 class="title">{{ .Title }}</h1>
 	<div class="post-meta"><i class="fa fa-calendar"></i>&nbsp;{{ .Date.Format "02/01/2006" }} - <i class="fa fa-clock-o"></i>&nbsp;{{ .ReadingTime}} min.
@@ -13,6 +13,11 @@
 		{{ .Content }}
 	</article>
 </section>
+
+{{ $mymonths := index $.Site.Data.mois }}
+<time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+   Article publié le {{ .Date.Day }} {{ index $mymonths (printf "%d" .Date.Month) }} {{ .Date.Year }} (dernière modification le {{ .Lastmod.Day }} {{ index $mymonths (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Year }})
+ </time>
 
 {{ partial "details.html" . }}
 {{ partial "disqus.html" . }}
