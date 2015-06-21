@@ -14,7 +14,8 @@
 -->
 <div class="panel clearfix">
 Partagez : 
-    <a title="Envoyer cet article par mail" href="mailto:?subject={{.Title | safeHTML }}&amp;body={{.Title | markdownify }} - {{ .Permalink }}"><span class="fa-stack fa-lg"><i class="fa-enveloppe fa-stack-2x"></i></span>&nbsp; E-mail</a> - <a title="Partager cet article sur Twitter" href="https://twitter.com/share?text={{ .Title | safeHTML }}&amp;url={{ .Permalink }}"> <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i>
+    <a title="Envoyer cet article par mail" href="mailto:?subject={{.Title | safeHTML }}&amp;body={{.Title | markdownify }} - {{ .Permalink }}"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i>
+  <i class="fa-envelope-o fa-stack-1x fa-inverse"></i></span>&nbsp; E-mail</a> - <a title="Partager cet article sur Twitter" href="https://twitter.com/share?text={{ .Title | safeHTML }}&amp;url={{ .Permalink }}"> <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i>
   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span>&nbsp; Twitter</a> -  <a title="Partager cet article sur Facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i>
   <i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span>&nbsp; Facebook</a>
 </div>
