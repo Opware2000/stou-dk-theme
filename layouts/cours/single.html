@@ -8,7 +8,11 @@
 		<span class="secondary radius label"> <a href="{{ $baseurl }}/tags/{{ . | urlize }}">#{{ . }}</a> </span>
 	{{ end }}
     </div>
-	<article class="cours">
+    <div id="toc" class="panel clearfix">
+    	<h4> Sommaire </h4>
+		{{ .TableOfContents }}
+	</div>
+   <article class="cours">
 		{{ .Content }}
 	</article>
 </section>
