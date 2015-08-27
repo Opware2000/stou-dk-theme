@@ -219,3 +219,27 @@ p.copyright {
 }
 .imagecache{margin-left:auto;margin-right:auto; max-width:470px;}
 .field-item{width:100%;}
+
+#toc {
+	margin-top : 2em;
+}
+#TableOfContents {
+	ul {
+		li {
+			list-style: none;
+			font-family: sans-serif;
+    		font-weight: bold;
+    		a {
+    			    color: darkgoldenrod;
+    		}
+		}
+	}
+}
+.cours {
+	blockquote{
+		color: #DD0000;
+		p {
+			color : #DD0000;
+		}
+	}
+}
